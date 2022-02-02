@@ -1,0 +1,104 @@
+#SQL Data Types
+
+-CHAR(255)
+
+-VAARCHAR(65535)
+
+-TEXT
+   -TINTEXT(255)
+   -TEXT(65535)
+   -MEDIUMTEXT(16777215)
+   -LONGTEXT(429496295)
+
+-Numeric Data    
+    -TINYINT
+    -SMALLINT
+    -MEDIUMINT
+    -INT
+    -BIGINT
+(In numeric data include signed range and unsigned range.
+In signed range include minue(-) to + values.
+In unsigned range include 0 to + values.)
+    -FLOAT(p,s)
+    -DOUBLE(p,s)
+p=precision ,s=scal
+float(4,2) will store total of four digits, two to the left of decimal and two to the right.
+Example : 25.66 , 7.56 , 12.5, 1.5
+Extra decimal wll be rounded .eg: 12.458 rounded to 12.46 ,error if try to store 123.45
+
+-Temporal Data
+    -DATE		YYYY-MM-DD		
+    -DATETIME		YYYY-MM-DD HH:MI:SS
+    -TIMESTAMP		YYYY-MM-DD HH:MI:SS
+    -YEAR		YYYY
+    -TIME		HH:MI:SS
+---------------------------------------------------------------------------------------------------------------------
+#To create database
+CREATE DATABASE [database name];
+
+#To delete database
+DROP DATABASE [database name];
+
+#To show existing database
+SHOW DATABASES; 
+
+#To start using any database
+USE [database name];
+
+#To create table
+CREATE TABLE [table name]
+(column_name data_type,
+column_name data_type,
+column_name data_type,
+CONSTRAINT pk_name PRIMARY KEY(column_name)
+);
+
+#List all tables
+SHOW TABLES;
+
+#To see table description(to ses data_type_name)
+DESCRIBE [table_name];
+DESC [table_name];
+
+#To rename table
+RENAME TABLE [table_name] To [new_table_name];
+
+#TO delete table
+DROP [table_name];
+
+#To add columm to existing table
+ALTER TABLE [table_name] ADD [column_name] [data_type];
+
+#To change column name in table
+ALTER TABLE [table_name] CHANGE [column_name] [new_column_name] [data_type];
+
+#To change data type of a column name
+ALTER TABLE [table_name] MODIFY COLUMN [column_name] [data_type];
+
+#To delete a column from existing table
+ALTER TABLE [table_name] DROP COLUMN [column_name];
+
+#Auto increment 
+id SMALLINT UNSIGNED AUTO INCREMENT
+
+#Inserting record
+INSERT INTO [table_name]
+(column_one, column_two,....)
+VALUES
+(value_one,value_two,.....),
+(value_one,value_two,.....);
+Note:use auto_increment column insert to value is "null".
+
+#show records in table
+SELECT * FROM [table_name];
+
+#Updating records
+UPDATE [table_name]
+SET [column_one=value_one],
+[column_two= value_two,.....]
+WHERE [condition];
+
+
+#Delete records
+DELETE FROM [table_name]
+WHERE [condition];
