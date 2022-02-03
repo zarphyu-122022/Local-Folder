@@ -44,7 +44,7 @@ SHOW DATABASES;
 
 #To start using any database
 USE [database name];
-
+.....................................................................................................................
 #To create table
 CREATE TABLE [table name]
 (column_name data_type,
@@ -79,8 +79,8 @@ ALTER TABLE [table_name] MODIFY COLUMN [column_name] [data_type];
 ALTER TABLE [table_name] DROP COLUMN [column_name];
 
 #Auto increment 
-id SMALLINT UNSIGNED AUTO INCREMENT
-
+id SMALLINT UNSIGNED AUTO_INCREMENT
+.........................................................................................................................
 #Inserting record
 INSERT INTO [table_name]
 (column_one, column_two,....)
@@ -102,3 +102,11 @@ WHERE [condition];
 #Delete records
 DELETE FROM [table_name]
 WHERE [condition];
+
+#Importing CSV data
+LOAD DATA INFILE 'C:/file_name.csv'
+INTO TABLE [table_name]
+FIELDS TERMINATED BY ','
+ENCLOSED BY ''''
+LINED TERMINATED BY '\n'
+INGORE 1 ROWS;
